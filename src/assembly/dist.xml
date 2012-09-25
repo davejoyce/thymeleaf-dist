@@ -1,71 +1,86 @@
 <?xml version="1.0"?>
-<assembly xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2" 
-          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-          xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2 http://maven.apache.org/xsd/assembly-1.1.2.xsd">
+<assembly
+	xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2 http://maven.apache.org/xsd/assembly-1.1.2.xsd">
 
-  <id>dist</id>
-  
-  <formats>
-    <format>zip</format>
-  </formats>
-  
-  <fileSets>
-    <fileSet>
-      <directory>${basedir}/../thymeleaf/target/checkout/target/apidocs/</directory>
-      <outputDirectory>/apidocs/thymeleaf/</outputDirectory>
-      <includes>
-        <include>**/*</include>
-      </includes>
-    </fileSet>
-    <fileSet>
-      <directory>${basedir}/../thymeleaf-spring3/target/checkout/target/apidocs/</directory>
-      <outputDirectory>/apidocs/thymeleaf-spring3/</outputDirectory>
-      <includes>
-        <include>**/*</include>
-      </includes>
-    </fileSet>
-    <fileSet>
-      <directory>${basedir}/../thymeleaf/target/checkout/target/</directory>
-      <outputDirectory>/dist</outputDirectory>
-      <includes>
-        <include>thymeleaf-${project.version}.jar</include>
-        <include>thymeleaf-${project.version}-javadoc.jar</include>
-        <include>thymeleaf-${project.version}-sources.jar</include>
-      </includes>
-    </fileSet>
-    <fileSet>
-      <directory>${basedir}/../thymeleaf-spring3/target/checkout/target/</directory>
-      <outputDirectory>/dist</outputDirectory>
-      <includes>
-        <include>thymeleaf-spring3-${project.version}.jar</include>
-        <include>thymeleaf-spring3-${project.version}-javadoc.jar</include>
-        <include>thymeleaf-spring3-${project.version}-sources.jar</include>
-      </includes>
-    </fileSet>
-    <fileSet>
-      <directory>${basedir}/</directory>
-      <outputDirectory>/</outputDirectory>
-      <includes>
-        <include>LICENSE.txt</include>
-        <include>README.txt</include>
-        <include>NOTICE.txt</include>
-      </includes>
-    </fileSet>
-  </fileSets>
-    
-    
-  <dependencySets>
-    <dependencySet>
-      <outputDirectory>/lib</outputDirectory>
-      <unpack>false</unpack>
-      <scope>runtime</scope>
-      <excludes>
-        <exclude>org.thymeleaf:thymeleaf</exclude>
-        <exclude>org.thymeleaf:thymeleaf-spring3</exclude>
-        <exclude>org.thymeleaf:thymeleaf-dist</exclude>
-      </excludes>
-    </dependencySet>
-  </dependencySets> 
-  
-  
+	<id>dist</id>
+
+	<formats>
+		<format>zip</format>
+	</formats>
+
+	<fileSets>
+		<fileSet>
+			<directory>${basedir}/../thymeleaf/target/checkout/target/apidocs/</directory>
+			<outputDirectory>/apidocs/thymeleaf/</outputDirectory>
+			<includes>
+				<include>**/*</include>
+			</includes>
+		</fileSet>
+		<fileSet>
+			<directory>${basedir}/../thymeleaf-spring3/target/checkout/target/apidocs/</directory>
+			<outputDirectory>/apidocs/thymeleaf-spring3/</outputDirectory>
+			<includes>
+				<include>**/*</include>
+			</includes>
+		</fileSet>
+		<fileSet>
+			<directory>${basedir}/../thymeleaf/target/checkout/target/</directory>
+			<outputDirectory>/dist</outputDirectory>
+			<includes>
+				<include>thymeleaf-${project.version}.jar</include>
+				<include>thymeleaf-${project.version}-javadoc.jar</include>
+				<include>thymeleaf-${project.version}-sources.jar</include>
+			</includes>
+		</fileSet>
+		<fileSet>
+			<directory>${basedir}/../thymeleaf-spring3/target/checkout/target/</directory>
+			<outputDirectory>/dist</outputDirectory>
+			<includes>
+				<include>thymeleaf-spring3-${project.version}.jar</include>
+				<include>thymeleaf-spring3-${project.version}-javadoc.jar</include>
+				<include>thymeleaf-spring3-${project.version}-sources.jar</include>
+			</includes>
+		</fileSet>
+		<fileSet>
+			<directory>${basedir}/../thymeleaf-osgi/target/checkout/target/</directory>
+			<outputDirectory>/dist</outputDirectory>
+			<includes>
+				<include>thymeleaf-osgi-${project.version}.jar</include>
+			</includes>
+		</fileSet>
+		<fileSet>
+			<directory>${basedir}/../thymeleaf-spring3-osgi/target/checkout/target/</directory>
+			<outputDirectory>/dist</outputDirectory>
+			<includes>
+				<include>thymeleaf-spring3-osgi-${project.version}.jar</include>
+			</includes>
+		</fileSet>
+		<fileSet>
+			<directory>${basedir}/</directory>
+			<outputDirectory>/</outputDirectory>
+			<includes>
+				<include>LICENSE.txt</include>
+				<include>README.txt</include>
+				<include>NOTICE.txt</include>
+			</includes>
+		</fileSet>
+	</fileSets>
+
+	<dependencySets>
+		<dependencySet>
+			<outputDirectory>/lib</outputDirectory>
+			<unpack>false</unpack>
+			<scope>runtime</scope>
+			<excludes>
+				<exclude>org.thymeleaf:thymeleaf</exclude>
+				<exclude>org.thymeleaf:thymeleaf-osgi</exclude>
+				<exclude>org.thymeleaf:thymeleaf-spring3</exclude>
+				<exclude>org.thymeleaf:thymeleaf-spring3-osgi</exclude>
+				<exclude>org.thymeleaf:thymeleaf-dist</exclude>
+			</excludes>
+		</dependencySet>
+	</dependencySets>
+
 </assembly>
